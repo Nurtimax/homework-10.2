@@ -157,6 +157,9 @@ const Card = () => {
       ref.current.style.background =
         colorArray[Math.round(Math.random() * colorArray.length)];
     }, 1000);
+    return () => {
+    clearInterval(timer)
+    }
   }, [ref, colorArray]);
 
   return <CardStyle ref={ref}></CardStyle>;
